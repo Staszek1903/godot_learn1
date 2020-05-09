@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/default_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/ResourceBarrel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/VendingMashine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Battery.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/Factory.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Control.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/Reactor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/Slider.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/ItemHolder.tscn" type="PackedScene" id=11]
+
+[node name="ResourcesLvl" type="Node2D"]
+position = Vector2( 0, 262.278 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.4, 0.4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 4, 0, 65536, 4, 0, 131072, 4, 0, 131073, 9, 0, 131074, 9, 0, 131075, 10, 0, 196608, 4, 0, 262144, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 4, 0, 327693, 4, 0, 327694, 4, 0, 327695, 4, 0, 327696, 4, 0, 327697, 4, 0, 327698, 4, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327702, 4, 0, 327703, 4, 0, 327704, 4, 0, 327705, 4, 0, 327706, 4, 0, 327707, 4, 0, 327708, 4, 0 )
+
+[node name="VendingMashine" parent="." instance=ExtResource( 4 )]
+position = Vector2( 168.761, 447.733 )
+
+[node name="Factory" parent="." instance=ExtResource( 6 )]
+position = Vector2( 730.9, 450.949 )
+production_time = 5
+spawn_scene = ExtResource( 3 )
+
+[node name="3d" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="Reactor" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1327.82, 511.403 )
+
+[node name="Slider" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2051.29, 437.778 )
+
+[node name="ItemHolder" parent="." instance=ExtResource( 11 )]
+position = Vector2( 992.615, 510.408 )
+
+[node name="ItemHolder2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 918.82, 511.143 )
+
+[node name="VendingMashine2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 171.002, 141.001 )
+spawn_scene = ExtResource( 5 )
+production_time = 10
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1772.19, 376.376 )
+
+[node name="ResourceBarrel" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1014.26, 445.843 )
+
+[node name="Battery" parent="." instance=ExtResource( 5 )]
+position = Vector2( 169.175, 28.0709 )

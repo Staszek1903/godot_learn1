@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/default_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://png/Tiles/Acid (2).png" type="Texture" id=4]
+[ext_resource path="res://objects/door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/waste.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://lvl/SwitchesLvl.tscn" type="PackedScene" id=8]
+
+
+[node name="TestLevel" type="Node2D"]
+position = Vector2( 1, 0 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 862.0 ],
+"_edit_vertical_guides_": [ 2081.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="Acid (2)" type="TextureRect" parent="CanvasLayer"]
+anchor_left = 0.000976562
+anchor_right = 1.00098
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 34, 41 )
+scale = Vector2( 0.4, 0.4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 256 )
+collision_friction = 0.78
+collision_bounce = 0.26
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 19, 3, 0, 65536, 5, 0, 65555, 3, 0, 131072, 6, 0, 131073, 10, 0, 131088, 11, 0, 131091, 3, 0, 196608, 5, 0, 196613, 11, 0, 196619, 0, 0, 196620, 2, 0, 196627, 3, 0, 262144, 6, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 2, 0, 262155, 3, 0, 262156, 5, 0, 262158, 8, 0, 262159, 8, 0, 262160, 10, 0, 262163, 3, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 6, 0, 327686, 2, 0, 327691, 3, 0, 327692, 5, 0, 327698, 8, 0, 327699, 7, 0, 393216, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 6, 0, 393223, 2, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 7, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 6, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 7, 0, 458769, 4, 0, 458770, 4, 0, 458771, 4, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 179, 183 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 254, 407 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1051, 709 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1458, 709 )
+
+[node name="Waste" parent="." instance=ExtResource( 6 )]
+position = Vector2( 468, 388 )
+
+[node name="Waste2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1501, 709 )
+
+[node name="Waste3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 974, 709 )
+
+[node name="Box" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1622, 163 )
+
+[node name="Box2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 747, 501 )
+
+[node name="Door" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1263, 290 )
+next_scene = ExtResource( 8 )
+
+[node name="Waste4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1199, 311 )
+
+[node name="Waste5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1322, 311 )

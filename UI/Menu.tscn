@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://png/Tiles/Acid (2).png" type="Texture" id=1]
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=2]
+[ext_resource path="res://UI/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/PlayButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/QuitButton.tscn" type="PackedScene" id=5]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Acid (2)" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 3 )]
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.5
+margin_top = -119.5
+margin_right = 125.5
+margin_bottom = 119.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 4 )]
+scene_dir = "res://lvl/TestLevel.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]

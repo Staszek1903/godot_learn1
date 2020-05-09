@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/PlayButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/PlayButton.gd" type="Script" id=3]
+[ext_resource path="res://UI/QuitButton.tscn" type="PackedScene" id=4]
+
+[node name="Inteface" type="Control"]
+pause_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.411765 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 173.0
+margin_bottom = 86.0
+text = "PKT: %s"
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -125.5
+margin_top = -119.5
+margin_right = 125.5
+margin_bottom = 119.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="Menu" instance=ExtResource( 2 )]
+margin_right = 251.0
+margin_bottom = 117.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Menu"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_dir = "res://UI/Menu.tscn"
+
+[node name="QuitButton" type="Button" parent="Menu" instance=ExtResource( 4 )]
+margin_top = 121.0
+margin_right = 251.0
+margin_bottom = 239.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Spierdalaj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Menu/PlayButton" to="Menu/PlayButton" method="_on_PlayButton_button_up"]

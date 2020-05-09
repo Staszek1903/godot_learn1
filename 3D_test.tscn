@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/3D_test.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[node name="3D_test" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.36316, 0, 0, 0, 0.36316, 0, 0, 0, 0.36316, 0.539976, 0.514369, 0.329588 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06219, 1.12851, 0.935418 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.264715, 0.423399, -0.866406, 0, 0.898457, 0.439061, 0.964327, -0.116226, 0.237835, -2.64296, 2.10364, 1.15153 )
+projection = 1

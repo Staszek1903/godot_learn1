@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="AttachPointPasive" type="Position2D"]
+
+[node name="AttachSensorPasive" type="Area2D" parent="."]
+position = Vector2( 0, -2.09966 )
+scale = Vector2( 0.429868, 0.429868 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttachSensorPasive"]
+scale = Vector2( 0.455931, 0.455931 )
+shape = SubResource( 1 )

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/default_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/GameButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Level2.gd" type="Script" id=5]
+[ext_resource path="res://objects/Spawner.tscn" type="PackedScene" id=6]
+
+[node name="SwitchesLvl" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.4, 0.4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 4, 0, 65536, 4, 0, 131072, 4, 0, 196608, 4, 0, 196619, 9, 0, 196620, 9, 0, 196621, 9, 0, 196622, 9, 0, 196623, 9, 0, 196624, 9, 0, 262144, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 9, 0, 327697, 9, 0, 327698, 9, 0, 327699, 9, 0, 327700, 9, 0, 327701, 9, 0, 327702, 9, 0, 327703, 9, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 4, 0, 393229, 4, 0, 393230, 4, 0, 393231, 4, 0, 393232, 4, 0, 393233, 4, 0, 393234, 4, 0 )
+
+[node name="GameButton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 512 )
+
+[node name="spawnButton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1072, 514 )
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 800, 456 )
+next_scene = null
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 430, 353 )
+
+[node name="Spawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1240, 456 )
+scene = "res://Actors/Enemy.tscn"
